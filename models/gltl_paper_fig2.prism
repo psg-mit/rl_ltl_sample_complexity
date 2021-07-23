@@ -1,0 +1,17 @@
+// Example as in the GLTL paper figure 2
+
+mdp
+
+const double p1 = 1;
+const double p2 = {P2};
+
+label "g" = s=0;
+label "s" = s=1;
+
+module grid
+  s : [0..1];
+
+  [a1] s=0 -> p1 : (s'=0) + 1-p1 : (s'=1);
+  [a2] s=0 -> p2 : (s'=0) + 1-p2 : (s'=1);
+  [] s=1 -> (s'=1);
+endmodule

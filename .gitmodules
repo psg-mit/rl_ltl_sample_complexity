@@ -1,0 +1,3 @@
+[submodule "mungojerrie"]
+	path = mungojerrie
+	url = https://github.com/psg-mit/mungojerrie.git

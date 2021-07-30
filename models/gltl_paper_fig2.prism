@@ -2,7 +2,7 @@
 
 mdp
 
-const double p1 = 1;
+const double p1 = {P1};
 const double p2 = {P2};
 
 label "g" = s=0;

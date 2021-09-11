@@ -1,0 +1,18 @@
+// @title: 
+
+mdp
+
+const double p = {P};
+
+label "g" = s=0;
+label "h" = s=1;
+label "q" = s=2;
+
+module grid
+  s : [0..2];
+
+  [a1] s=0 -> p : (s'=1) + 1-p : (s'=0);
+  [a2] s=0 -> p : (s'=2) + 1-p : (s'=0);
+  [] s=1 -> (s'=1);
+  [] s=2 -> (s'=2);
+endmodule

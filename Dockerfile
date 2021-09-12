@@ -31,6 +31,7 @@ RUN cd mungojerrie; \
 
 RUN pip install matplotlib numpy scipy \
 		tqdm num2tex graphviz jupyterlab
+RUN pip install ipywidgets
 
 COPY rl_ltl_pac.ipynb rl_ltl_pac.ipynb
 

@@ -1,0 +1,29 @@
+// @title: A gridworld counter example
+// @comment: see [Sadigh, Dorsa & Kim, Eric & Coogan, Samuel & Sastry, Shankar & Seshia, Sanjit. (2014). A Learning Based Approach to Control Synthesis of Markov Decision Processes for Linear Temporal Logic Specifications]
+
+mdp
+
+const int N = 5;
+const double p = {P};
+
+label "goal" = (x = N & y = N);
+formula lava = (x=0 & y=4) | (2<=x & x<=N-1 & y=N-1) | (x=2 & y=0);
+
+module grid
+  x : [0..N] init 0;
+  y : [0..N] init 0;
+
+  []      lava          -> 1: (x'=x) & (y'=y);
+
+  [right] !lava & x<N   -> p : (x'=x+1) + (1-p) : (x'=x);
+  [right] !lava & x=N   -> 1 : (x'=x);
+
+  [up]    !lava & y<N   -> p : (y'=y+1) + (1-p) : (y'=y);
+  [up]    !lava & y=N   -> 1 : (y'=y);
+
+  [left]  !lava & x>0   -> p : (x'=x-1) + (1-p) : (x'=x);
+  [left]  !lava & x=0   -> 1 : (x'=x);
+
+  [down]  !lava & y>0   -> p : (y'=y-1) + (1-p) : (y'=y);
+  [down]  !lava & y=0   -> 1 : (y'=y);
+endmodule

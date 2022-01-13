@@ -13,6 +13,8 @@ rm -rf code_supplement/mungojerrie/.git
 # Copy models
 cp models/rl_ltl_pac_paper.prism code_supplement/models
 cp models/rl_ltl_pac_paper.ltl code_supplement/models
+cp models/gridworld_sadigh14.prism code_supplement/models
+cp models/gridworld_sadigh14.ltl code_supplement/models
 
 # Copy main notebook
 cp rl_ltl_pac.ipynb code_supplement
